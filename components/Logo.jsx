@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <Link href="/">
       <Image
-        className="max-w-[100px] md:max-w-[165px]"
+        className="max-w-[40px] md:max-w-[60px]"
         src="/logo.png"
         alt="Shutter Bloom"
         height={100}
