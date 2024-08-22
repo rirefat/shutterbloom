@@ -1,7 +1,11 @@
+'use client'
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Language = () => {
+    const pathname = usePathname();
+    console.log(pathname)
     return (
         <div className="relative">
             <button className="flex items-center gap-2">
