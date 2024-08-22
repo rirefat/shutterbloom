@@ -1,8 +1,10 @@
+import { getDictionary } from "@/app/[lang]/dictionaries/dictionaries";
 import Image from "next/image";
 
 const PhotoDetails = async ({ id, lang }) => {
     const response = await fetch(`${process.env.BASE_API_URL}/photos/${id}`);
     const photo = await response.json();
+    const dict = await getDictionary(lang);
 
     return (
         <div className="grid grid-cols-12 gap-4 2xl:gap-10 ">
@@ -40,19 +42,19 @@ const PhotoDetails = async ({ id, lang }) => {
                 <div className="space-y-2.5 text-black/80 text-xs lg:text-sm">
                     {/* item start  */}
                     <div className="flex justify-between">
-                        <span>Views</span>
+                        <span>{dict.views}</span>
                         <span className="font-bold">{photo.views}</span>
                     </div>
                     {/* item ends  */}
                     {/* item start  */}
                     <div className="flex justify-between">
-                        <span>Share</span>
+                        <span>{dict.share}</span>
                         <span className="font-bold">{photo.share}</span>
                     </div>
                     {/* item ends  */}
                     {/* item start  */}
                     <div className="flex justify-between">
-                        <span>Up loaded</span>
+                        <span>{dict.uploadedOn}</span>
                         <span className="font-bold">{photo.uploaded}</span>
                     </div>
                     {/* item ends  */}
@@ -74,7 +76,7 @@ const PhotoDetails = async ({ id, lang }) => {
                             />
                             <div className="spacy-y-3">
                                 <h6 className="lg:text-lg font-bold">{photo.author.name}</h6>
-                                <p className="text-black/60 text-xs lg:text-sm">{photo.author.followers} Followers</p>
+                                <p className="text-black/60 text-xs lg:text-sm">{photo.author.followers} {dict.followers}</p>
                             </div>
                         </div>
                         {/* action  */}
@@ -86,7 +88,7 @@ const PhotoDetails = async ({ id, lang }) => {
                                 height={25}
                                 alt="Follow Icon"
                             />
-                            Follow
+                            {dict.follow}
                         </button>
                     </div>
                     {/* author bio  */}
@@ -119,7 +121,7 @@ const PhotoDetails = async ({ id, lang }) => {
                                 height={25}
                                 alt="Save Icon"
                             />
-                            Save
+                            {dict.save}
                         </button>
                         <button
                             className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-blue-300">
@@ -130,7 +132,7 @@ const PhotoDetails = async ({ id, lang }) => {
                                 height={25}
                                 alt="Share Icon"
                             />
-                            Share
+                            {dict.share}
                         </button>
                     </div>
                 </div>

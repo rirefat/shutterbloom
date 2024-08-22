@@ -1,5 +1,11 @@
 {
     "bengali": "বাংলা",
     "english": "ইংরেজি",
-    "photo":"ছবি"
+    "photo":"ছবি",
+    "views": "ভিউস",
+    "share": "শেয়ার",
+    "uploadedOn": "আপলোড তারিখ",
+    "save": "সংরক্ষণ",
+    "followers": "অনুসারী",
+    "follow": "অনুসরণ করুন"
 }

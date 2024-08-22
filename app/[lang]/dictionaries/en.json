@@ -1,5 +1,11 @@
 {
     "bengali": "Bengali",
     "english": "English",
-    "photo":"Photo"
+    "photo": "Photo",
+    "views": "Views",
+    "share": "Share",
+    "uploadedOn": "Uploaded On",
+    "save": "Save",
+    "followers": "Followers",
+    "follow": "Follow"
 }

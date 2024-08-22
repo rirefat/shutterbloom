@@ -5,7 +5,7 @@ import Link from "next/link";
 const PhotoCard = ({photo}) => {
     return (
         <>
-            <Link href={`photos/${photo.id}`} className="group">
+            <Link href={`photos/${photo.id}`} className="group shadow-lg">
                 <Image src={photo.url} alt={photo.title} width={700} height={700} />
 
                 <div className="title-container">
