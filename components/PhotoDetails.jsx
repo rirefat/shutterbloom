@@ -25,7 +25,16 @@ const PhotoDetails = async ({ id, lang }) => {
                     {photo.title}
                 </h2>
                 <div className="text-xs lg:text-sm text-black/60 mb-6">
-                    #nature, #river, #ocean
+                    {
+                        photo.tags.map(tag => (
+                            <span
+                                key={tag}
+                                className="mx-1 bg-blue-100 px-2 py-1 rounded-lg shadow-lg"
+                            >
+                                #{`${tag}`}
+                            </span>
+                        ))
+                    }
                 </div>
                 {/* info rows  */}
                 <div className="space-y-2.5 text-black/80 text-xs lg:text-sm">
@@ -91,7 +100,7 @@ const PhotoDetails = async ({ id, lang }) => {
                 <div className="mt-6">
                     <div className="flex items-stretch gap-3">
                         <button
-                            className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-yellow-400">
+                            className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-blue-300">
                             <Image
                                 src="/heart.svg"
                                 className="w-5 h-5"
@@ -102,7 +111,7 @@ const PhotoDetails = async ({ id, lang }) => {
                             {photo.likes}
                         </button>
                         <button
-                            className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-yellow-400">
+                            className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-blue-300">
                             <Image
                                 src="/save.svg"
                                 className="w-5 h-5"
@@ -113,7 +122,7 @@ const PhotoDetails = async ({ id, lang }) => {
                             Save
                         </button>
                         <button
-                            className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-yellow-400">
+                            className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-blue-300">
                             <Image
                                 src="/share.svg"
                                 className="w-5 h-5"
