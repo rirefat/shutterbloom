@@ -10,7 +10,7 @@ const Navbar = () => {
 
                 <div className="flex gap-4 items-center">
                     {/* Language Dropdown  */}
-                    <Language />
+                    {/* <Language /> */}
 
                 </div>
             </div>

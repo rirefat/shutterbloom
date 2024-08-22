@@ -17,6 +17,8 @@ export default function RootLayout({ children }) {
         <div class="container my-4 lg:my-8">
           {children}
         </div>
+        
+        <div id="modal-root-content"/>
       </body>
     </html>
   );
