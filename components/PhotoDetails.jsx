@@ -1,5 +1,6 @@
 import { getDictionary } from "@/app/[lang]/dictionaries/dictionaries";
 import Image from "next/image";
+import ShareButton from "./ShareButton";
 
 const PhotoDetails = async ({ id, lang }) => {
     const response = await fetch(`${process.env.BASE_API_URL}/photos/${id}`);
@@ -123,17 +124,7 @@ const PhotoDetails = async ({ id, lang }) => {
                             />
                             {dict.save}
                         </button>
-                        <button
-                            className="flex-1 border py-1.5 rounded text-xs lg:text-sm flex items-center justify-center text-center gap-1.5 font-bold hover:bg-blue-300">
-                            <Image
-                                src="/share.svg"
-                                className="w-5 h-5"
-                                width={25}
-                                height={25}
-                                alt="Share Icon"
-                            />
-                            {dict.share}
-                        </button>
+                        <ShareButton share={dict.share}/>
                     </div>
                 </div>
             </div>

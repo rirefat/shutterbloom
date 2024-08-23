@@ -8,9 +8,12 @@ export default function Error({ error, reset }) {
     }, [error])
 
     return (
-        <div>
+        <div className='flex flex-col gap-4'>
             <h2 className='text-center text-2xl'>Something went wrong!</h2>
-            <button onClick={() => reset()} >
+            <button 
+            onClick={() => reset()}
+            className='hover:underline'
+             >
                 Try again
             </button>
         </div>

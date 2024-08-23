@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,8 @@ export default function RootLayout({ children }) {
         <div className="container my-4 lg:my-8">
           {children}
           <div id="modal-root-content" />
+          <Toaster />
         </div>
-
       </body>
     </html>
   );
