@@ -14,11 +14,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <div class="container my-4 lg:my-8">
+        <div className="container my-4 lg:my-8">
           {children}
+          <div id="modal-root-content" />
         </div>
-        
-        <div id="modal-root-content"/>
+
       </body>
     </html>
   );
